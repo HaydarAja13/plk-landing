@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --color-carbon-ink: #1a211e;
+  --color-paper-white: #ffffff;
+  --color-true-black: #000000;
+  --color-obsidian: #0c0c0c;
+  --color-fog: #eef1f0;
+  --color-mist: #e0e0e0;
+  --color-graphite: #606562;
+  --color-ash-border: #cccfcd;
+  --color-slate: #363537;
+  --color-pewter: #4e4e4e;
+  --color-ember-red: #cc2e39;
+  --color-kencana-gold: #d4af37;
+
+  --color-plk-bg: #ffffff;
+  --color-plk-card: #ffffff;
+  --color-plk-primary: #1a211e;
+  --color-plk-secondary: #606562;
+  --color-plk-border: #e0e0e0;
+  --color-plk-promo: #cc2e39;
+
+  --font-geist: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  --radius-cards: 8px;
+  --radius-buttons: 4px;
+  --radius-inputs: 4px;
+  --radius-medium: 4px;
+  --radius-pills: 9999px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a211e;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Geist Display Headline Utility */
+.font-display-serif {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.10;
+}
+
+/* Geist Caps Label / Button Utility */
+.font-bryant-caps {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Infinite Marquee Animation for Brand Side-Scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Gradient Mask for Smooth Edges */
+.mask-linear-gradient {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: rgba(26, 33, 30, 0.15);
+  color: #1a211e;
+}
+
+/* Custom Caret Color */
+input, textarea {
+  caret-color: #1a211e;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccfcd;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a211e;
+}
+
+/* Focus styles */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid #1a211e;
+  outline-offset: 2px;
+}
