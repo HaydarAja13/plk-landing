@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/data/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://putralogamkencana.com',
+      url: SITE_URL,
     },
     {
-      url: 'https://putralogamkencana.com/katalog',
+      url: `${SITE_URL}/katalog`,
     },
   ];
 }

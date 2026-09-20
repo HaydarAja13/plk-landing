@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import { SITE_URL } from '@/data/site';
 import './globals.css';
 
 const inter = Inter({
@@ -15,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://putralogamkencana.com'),
+  metadataBase: new URL(SITE_URL),
   title: 'Toko Bangunan di Semarang | Putra Logam Kencana',
   description: 'Cari alat tukang, perkakas teknik, cat, listrik, dan material bangunan di Semarang. Jelajahi katalog Putra Logam Kencana dan tanyakan harga serta stok.',
   alternates: { canonical: '/' },
@@ -33,8 +34,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Putra Logam Kencana',
-  url: 'https://putralogamkencana.com',
-  logo: 'https://putralogamkencana.com/logo-pt.png',
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo-pt.png`,
   description: 'Katalog alat tukang, perkakas teknik, dan material bangunan.',
 };
 
