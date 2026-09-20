@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SITE_URL } from '@/data/site';
 import './globals.css';
 
@@ -57,6 +59,8 @@ export default function RootLayout({
       </head>
       <body className="bg-[#ffffff] text-[#1a211e] antialiased selection:bg-[#1a211e]/15 selection:text-[#1a211e]">
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
